@@ -24,21 +24,35 @@ ls = [744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358]
 parts_sums(ls) -> [10037855, 9293730, 9292795, 9292388, 9291934, 9291504, 9291414, 9291270, 2581057, 2580168, 2579358, 0]
 '''
 
+# need to figure out a solution that doesn't use nested loops
+
 def parts_sums(ls):
-    # your code
     new_list = []
     num = 0
-    while len(ls) != 0:
-        for i in range(len(ls)):
-            # print(ls[i])
-            num += ls[i]
+    for item in ls:
+        num += item
+    new_list.append(num)
+    for i in range(len(ls)):
+        print(ls[i])
+        num -= ls[i]
         new_list.append(num)
-        # print(new_list)
-        num = 0
-        ls.pop(0)
-    new_list.append(0)
-    # print(new_list)
+    print(new_list)
     return new_list
+    
+    
+
+
+    # while len(ls) != 0:
+    #     for i in range(len(ls)):
+    #         # print(ls[i])
+    #         num += ls[i]
+    #     new_list.append(num)
+    #     # print(new_list)
+    #     num = 0
+    #     ls.pop(0)
+    # new_list.append(0)
+    # # print(new_list)
+    # return new_list
 
 if __name__ == '__main__':
     parts_sums([0, 1, 3, 6, 10]) 
