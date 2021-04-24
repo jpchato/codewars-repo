@@ -13,26 +13,28 @@ Constraints
 Along with opening (() and closing ()) parenthesis, input may contain any valid ASCII characters. Furthermore, the input string may be empty and/or not contain any parentheses at all. Do not treat other forms of brackets as parentheses (e.g. [], {}, <>).
 '''
 def valid_parentheses(string):
-    string = string.strip()
-    my_dictionary = {
-        '(' : 0,
-        ')' : 0
-    }
-    for item in string:
-        # print(item)
-        if item == '(':
-            my_dictionary['('] += 1 
-        elif item == ')':
-            my_dictionary[')'] += 1
+    opening = '('
+    closing = ')'
+    stack = []
     
-    if my_dictionary['('] != [')']:
-        print(False)
-        return False
-    elif my_dictionary['('] == [')']:
+    for item in string:
+        if item == opening:
+            stack.append(item)
+        elif item == closing:
+            if len(stack) == 0:
+                return False
+            stack.pop()
+    if len(stack) == 0:
         print(True)
         return True
+    else:
+        print(False)
+        return False
 
+    
 
 if __name__ == '__main__':
-    valid_parentheses("  (")
+    # valid_parentheses("  (")
     # False
+    # valid_parentheses("hi())(")#,False
+    valid_parentheses('m()p(yzckpbz()hzhcrfx)hh(ereobaw)') #True
