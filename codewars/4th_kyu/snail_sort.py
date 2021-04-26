@@ -46,9 +46,6 @@ def snail(snail_map):
                 del i[0]
     return results
 
-
-   
-
 if __name__ == '__main__':
     snail([[1,2,3],
          [4,5,6],
