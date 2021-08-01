@@ -20,17 +20,21 @@ def is_square(n):
     25  =>  true
     26  =>  false
     '''
-    # if n < 0:
-    #     return False
-    if n == 0:
+    # print(n ** .5)
+    if n < 0:
+        # print(False)
+        return False
+    elif n == 0:
+        # print(True)
         return True
-    for i in range(n):
-        if i * i == n:
-            # print(True)
-            return True
-    # print(False)
-    return False
-
+    elif (n ** 0.5).is_integer():
+        # print(True)
+        return True
+    else:
+        # print(False)
+        return False
 
 # is_square(25)#, True, "25 is a square number (5 * 5)"
-is_square( 0)#, True, "0 is a square number (0 * 0)")
+# is_square( 0)#, True, "0 is a square number (0 * 0)")
+# is_square( 3)#, False, "3 is not a square number"
+is_square( 4)#, True, "4 is a square number (2 * 2)"
