@@ -28,6 +28,7 @@ def is_square(n):
         # print(True)
         return True
     elif (n ** 0.5).is_integer():
+        # .is_integer() can check if a float is an int
         # print(True)
         return True
     else:
@@ -37,4 +38,4 @@ def is_square(n):
 # is_square(25)#, True, "25 is a square number (5 * 5)"
 # is_square( 0)#, True, "0 is a square number (0 * 0)")
 # is_square( 3)#, False, "3 is not a square number"
-is_square( 4)#, True, "4 is a square number (2 * 2)"
+is_square( 4)#, True, "4 is a square number (2 * 2)"  
