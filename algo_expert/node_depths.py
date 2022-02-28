@@ -1,7 +1,11 @@
+"""
+https://stackoverflow.com/questions/62719995/summing-up-node-depths-in-a-binary-tree
+"""
+
 def nodeDepths(root):
     final = [0]
-	helper(root,0,final)
-	return final[0]
+    helper(root,0,final)
+    return final[0]
 
 def helper(node, d, final):
 	if not node:
