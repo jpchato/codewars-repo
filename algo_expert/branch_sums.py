@@ -1,4 +1,7 @@
 # This is the class of the input root. Do not edit it.
+'''
+https://stackoverflow.com/questions/60202046/python-calculating-branch-sum-of-binary-tree
+'''
 class BinaryTree:
     def __init__(self, value):
         self.value = value
